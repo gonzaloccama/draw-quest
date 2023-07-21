@@ -1,5 +1,5 @@
 # draw-quest
-El código proporcionado es la implementación del servidor para un juego en tiempo real llamado "Draw Quest". El juego es una versión simplificada del popular juego en línea "Skribbl.io", donde varios jugadores compiten en rondas para adivinar la palabra que otro jugador está dibujando. A continuación, se describen las principales características y mecánicas del juego:
+El código es la implementación del servidor para un juego en tiempo real llamado "Draw Quest". El juego es una versión simplificada del popular juego en línea "Skribbl.io", donde varios jugadores compiten en rondas para adivinar la palabra que otro jugador está dibujando. A continuación, se describen las principales características y mecánicas del juego:
 
 Registro de jugadores: Los jugadores pueden unirse al juego proporcionando un nombre de jugador único. Cada jugador se representa mediante la clase Player, que contiene información como el nombre del jugador, el ID del socket asociado, si es el dueño de la sala y su puntuación.
 
