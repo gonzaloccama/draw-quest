@@ -1,0 +1,528 @@
+.loginArea {
+    margin: auto;
+    position: absolute;
+    border: 3px solid white;
+    /*border-radius: 10px;*/
+    width: 360px;
+    background-color: #1973e0;
+    text-align: center;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.76);
+    z-index: 3;
+    padding: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+
+
+
+.separator{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-top: 1px solid white;
+}
+
+#sendMsgBtn {
+    background-color: #1976D2; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-weight: bold;
+    border: 2px solid #1976D2; /* Borde del botón del mismo color que el fondo */
+    border-radius: 5px;
+    padding: 10px 20px; /* Agrega espacio interno al botón */
+    width: 100%; /* Ancho completo del botón dentro de su contenedor */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Agrega una transición suave al cambiar el color de fondo y el borde */
+}
+/* Efecto de hover */
+#sendMsgBtn:hover {
+     background-color: #1565C0; /* Cambia el color de fondo al pasar el ratón por encima del botón */
+     border-color: #1565C0; /* Cambia el color del borde al pasar el ratón por encima del botón */
+ }
+
+
+
+body {
+    background-image: url('/images/bg.png');
+    overflow: hidden;
+}
+
+#sendMsgBtn:hover, #startGame:hover {
+    color: white;
+}
+
+#sendMsgBtn:hover {
+    background-color: black;
+}
+
+
+
+#randomName {
+    background-color: #686767;
+    color: white;
+    border: 2px solid black;
+    border-radius: 100px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 130%;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    position: relative; /* Agregar posición relativa para el contenido rotado */
+    overflow: hidden; /* Ocultar el contenido que se desborde */
+}
+
+#randomName i {
+    display: inline-block;
+    transition-duration: 0.5s;
+}
+
+#randomName:hover {
+    background-color: #000000;
+}
+
+#randomName:hover i {
+    transform: rotate(360deg); /* Aplicar rotación solo al contenido (texto) */
+}
+
+
+
+@keyframes wobble {
+    0% {
+        transform: translateX(0%);
+    }
+    15% {
+        transform: translateX(-10%);
+    }
+    30% {
+        transform: translateX(8%);
+    }
+    45% {
+        transform: translateX(-6%);
+    }
+    60% {
+        transform: translateX(5%);
+    }
+    75% {
+        transform: translateX(-3%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.winner {
+    animation: wobble 1s linear infinite, scaleUp 1s ease-in-out infinite alternate;
+}
+
+.winner .player-div{
+    border: 3px solid #f9ca24;
+    background-color: #f3f3f3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes wobble {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-5px); }
+    30% { transform: translateX(5px); }
+    45% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    90% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+
+#loginButton {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#loginButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Agregar un efecto de foco para cuando se presiona el botón */
+#loginButton:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+.optBtn {
+    background-color: #fff; /* Fondo del borde */
+    color: #1973e0; /* Color del texto */
+    font-weight: bold;
+    border: 2px solid #1973e0; /* Borde del botón */
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.optBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.optBtn:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+
+.loginArea #opt1, #opt2, #opt3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 15px;
+}
+
+.loginArea h1 {
+    color: #ececec;
+}
+
+#overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+#canvas {
+    position: absolute;
+    top: calc(7% + 40px); /* Coloca el elemento debajo de #topBar con 40px de separación */
+    left: calc(3% + 280px); /* Separación horizontal de 280px (260px de #player-container + 20px de espacio) */
+    width: calc(100% - 645px); /* El ancho es el espacio restante después de restar el ancho de #player-container y #chat-container */
+    height: 500px; /* Establece la altura deseada para el #canvas */
+    margin: auto;
+    background-color: lightblue; /* Solo para visualizar el área del #canvas */
+}
+
+#chat-container {
+    position: absolute;
+    top: calc(7% + 40px); /* Coloca el elemento debajo de #topBar con 40px de separación */
+    left: calc(100% - 300px); /* Alinea el elemento a la derecha de .overallHolder con un margen de 260px (ancho de #player-container) */
+    width: 260px;
+    height: calc(100% - (7% + 40px + 50px + 6px)); /* Altura automáticamente calculada */
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    word-break: break-all;
+    padding: 0.5rem 0.5rem 8rem 0.5rem;
+    overflow-y: auto; /* Habilita el scroll vertical cuando el contenido supere la altura */
+
+}
+
+div.chat-container > div:nth-of-type(even) {
+    background-color: #ececec;
+}
+
+#wordcounter {
+    position: absolute;
+    display: inline-block;
+    margin: 4px;
+    right: 0;
+    bottom: 0;
+    box-sizing: inherit;
+    display: flex;
+}
+
+.chatInput {
+    display: inline-block;
+    top: 77%;
+    right: 4%;
+    height: auto;
+    width: 220px;
+    border: 1px solid black;
+    padding: 4px;
+    position: absolute;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.overallHolder {
+    width: 90%;
+    max-width: 1500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.voting {
+    position: absolute;
+    top: calc(8% + 40px); /* Coloca el elemento debajo de #topBar con 40px de separación */
+    right: calc(20% + 20px); /* Separación horizontal de 20px desde el borde derecho de .overallHolder */
+    z-index: 3;
+}
+
+
+.voting > button > img {
+    opacity: 0.4;
+}
+
+.voting > button > img:hover {
+    opacity: 1;
+}
+
+.voting > button {
+    border: 0px;
+    background-color: white;
+}
+
+.chat-message {
+    font-family: fantasy;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    word-break: break-all;
+    border-bottom: 1px solid grey;
+}
+
+.chat-message i {
+    font-family: "Roboto Light", sans-serif;
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 200!important;
+}
+
+#playerList, th, td {
+    border: 2px solid black;
+}
+
+xmp, pre, code {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+#player-container {
+    margin: auto;
+    position: absolute;
+    top: calc(7% + 40px); /* Coloca el elemento debajo de #topBar con 40px de separación */
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    height: calc(100% - (7% + 40px + 50px + 6px)); /* Altura automáticamente calculada */
+    width: 260px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.player-div {
+    width: 240px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9fafc;
+    border: 1px solid #e1e5eb;
+    border-radius: 10px;
+    height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.player-div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-name {
+    text-align: left;
+    flex-grow: 1;
+    border-right: 2px dotted #5e5e5e;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.player-score {
+
+    text-align: right;
+    flex-grow: initial;
+
+    width: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 3px 6px;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.drawingPlayer {
+    border: 3px solid #ff4757 !important;
+    box-shadow: 0 4px 8px rgba(255, 71, 87, 0.1);
+    background-color: #fff3f3;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.correctGuessPlayer {
+    background-color: #4CAF50;
+}
+
+#guessWordField {
+    padding: 0;
+    margin: 10px;
+    color: black;
+    width: fit-content;
+    font-size: 150%;
+}
+
+#topBar {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: space-between;
+    position: absolute;
+    top: 20px; /* Ajustar la distancia superior según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente el elemento */
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    max-width: 1350px; /* Limita el ancho máximo para pantallas más grandes */
+    height: 50px;
+    border: 2px solid #1973e0; /* Borde azul */
+    border-radius: 25px; /* Bordes redondeados */
+    background-color: #E0E0E0; /* Color de fondo gris claro */
+    padding: 10px 20px; /* Agrega espacio interno para el contenido */
+}
+
+
+/* Estilo del texto h1 dentro de #topBar */
+#topBar h1 {
+    margin: 0;
+    color: #4CAF50; /* Color de texto verde */
+    font-size: 24px;
+}
+
+#guessWordField span {
+    color: #3c893f;
+    font-weight: bold; /* Hacemos el texto en negrita para resaltarlo */
+}
+
+
+#timerIcon {
+    position: absolute;
+    right: 1.4rem;
+}
+
+#timer {
+    margin: 10px;
+    text-align: right;
+    flex-grow: initial;
+    padding-right: 40px;
+    padding-left: 0px;
+    font-size: 100%;
+    color: #408443; /* Color del cronómetro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#countdown {
+    font-size: 1.4em; /* Tamaño grande para el número de cuenta regresiva */
+    animation: countdownAnimation 1s linear infinite; /* Animación de cuenta regresiva */
+}
+
+@keyframes countdownAnimation {
+    0% {
+        opacity: 1; /* El número es completamente visible al inicio */
+    }
+    50% {
+        opacity: 0.5; /* El número se desvanece a la mitad del tiempo */
+    }
+    100% {
+        opacity: 1; /* El número es completamente visible nuevamente al final */
+    }
+}
+
+#bottomBar {
+    position: absolute;
+    margin: auto;
+    top: calc(7% + 560px); /* Coloca el elemento debajo de #canvas con 560px de separación (500px de #canvas + 50px de separación) */
+    left: calc(3% + 280px); /* Separación horizontal de 280px (260px de #player-container + 20px de espacio) */
+    width: calc(100% - 645px);
+    border: 1px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    gap: 10px;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+
+#bottomBar > button {
+    background-color: #ffffff;
+    border: 2px solid #1976d2; /* Color del borde del botón */
+    border-radius: 50%; /* Borde redondeado para hacer un círculo */
+    width: 55px; /* Ancho del botón */
+    height: 55px; /* Altura del botón */
+    font-size: 18px;
+    color: #1976d2; /* Color del texto del botón */
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#bottomBar > button:hover {
+    background-color: #1976d2; /* Color del fondo al pasar el mouse */
+    color: #ffffff; /* Color del texto al pasar el mouse */
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+#bottomBar > button:focus {
+    outline: none; /* Elimina el borde al hacer clic en el botón */
+}
+
+.fs-14{
+    font-size: 14px;
+}
+
+.fs-20{
+    font-size: 20px;
+}
