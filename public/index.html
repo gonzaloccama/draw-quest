@@ -16,16 +16,23 @@
 <div class="overallHolder">
 
     <div id="topBar">
+        <!-- Área del logo -->
+        <div id="logoArea">
+            <img id="logo" src="./images/logo.png">
+        </div>
+
         <p id="guessWordField">Dibujar: </p>
-        <img id="timerIcon" width="40px" height="40px" src="/images/timer.png">
 
-
-        <p>Max Rounds: <span id="maxRounds">0</span></p>
-        <p>Current Round: <span id="currentRound">0</span></p>
+        <div class="rounds-container">
+            <p><span id="currentRound">0</span></p>
+            <p> de  <span id="maxRounds">0</span> Rondas</p>
+        </div>
 
         <p id="timer">
             <span id="countdown">0</span>
         </p>
+        <img id="timerIcon" width="40px" height="40px" src="/images/timer.png">
+
     </div>
 
     <div id="player-container"></div>

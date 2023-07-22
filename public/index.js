@@ -749,12 +749,12 @@ socket.on('drawEnd', () => {
 
 socket.on('maxRounds', maxRounds => {
     // Actualizar la vista con el número máximo de rondas
-    document.getElementById('maxRounds').innerText = `Número máximo de rondas: ${maxRounds}`;
+    document.getElementById('maxRounds').innerText = `${maxRounds}`;
 });
 
 socket.on('currentRound', currentRound => {
     // Actualizar la vista con el número de rondas actuales
-    document.getElementById('currentRound').innerText = `Ronda actual: ${currentRound}`;
+    document.getElementById('currentRound').innerText = `${currentRound}`;
 });
 
 // Eventos adicionales:

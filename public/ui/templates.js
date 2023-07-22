@@ -755,3 +755,5 @@ socket.on("disconnect", () => {
     loginContainer.innerHTML = loginDiv;
     location.reload();
 });
+
+

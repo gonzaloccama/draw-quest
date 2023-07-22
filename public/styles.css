@@ -407,13 +407,7 @@ xmp, pre, code {
     background-color: #4CAF50;
 }
 
-#guessWordField {
-    padding: 0;
-    margin: 10px;
-    color: black;
-    width: fit-content;
-    font-size: 150%;
-}
+
 
 #topBar {
     display: flex;
@@ -432,12 +426,35 @@ xmp, pre, code {
     padding: 10px 20px; /* Agrega espacio interno para el contenido */
 }
 
+#logoArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 85px; /* Ajustar el tamaño del área del logo */
+    height: 85px;
+    border-radius: 50%; /* Hacer que el área del logo sea circular */
+    background-color: #E0E0E0; /* Color de fondo blanco */
+    border: 2px solid #1973e0; /* Borde azul */
+    overflow: hidden; /* Ocultar el contenido que desborde el área circular */
+    z-index: 1; /* Colocar el logo en frente del resto del contenido */
+}
 
-/* Estilo del texto h1 dentro de #topBar */
-#topBar h1 {
-    margin: 0;
-    color: #4CAF50; /* Color de texto verde */
-    font-size: 24px;
+#logo {
+    width: 90%; /* Ajustar el tamaño de la imagen del logo para llenar el área circular */
+    height: 90%;
+    object-fit: contain; /* Ajustar la imagen para que quepa dentro del área circular */
+}
+
+#guessWordField {
+    padding: 0;
+    margin: 10px 10px 10px 80px;
+    color: black;
+    width: fit-content;
+    font-size: 150%;
 }
 
 #guessWordField span {
@@ -477,6 +494,28 @@ xmp, pre, code {
     100% {
         opacity: 1; /* El número es completamente visible nuevamente al final */
     }
+}
+
+.rounds-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #1973e0;
+    color: white;
+    padding: 2px 15px;
+    border-radius: 20px;
+}
+
+.rounds-container p {
+    margin: 0;
+    font-size: 18px;
+}
+
+#currentRound,
+#maxRounds {
+    font-weight: bold;
+    font-size: 24px;
 }
 
 #bottomBar {
